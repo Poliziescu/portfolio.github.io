@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stoicescu Marian Eric — Software Engineer</title>
+<meta name="description" content="Portfolio di Stoicescu Marian Eric, software engineer presso Tesisquare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <span class="logo">SME</span>
+    <nav>
+      <a href="#about">Chi sono</a>
+      <a href="#projects">Progetti</a>
+      <a href="#contact">Contatti</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-text">
+      <p class="eyebrow">v1.0 — release iniziale</p>
+      <h1>Stoicescu Marian<br>Eric</h1>
+      <p class="role">Software Engineer @ Tesisquare</p>
+      <p class="hero-desc">
+        Scrivo, mantengo e migliora software da quasi 3 anni. Questo portfolio raccoglie
+        i progetti su cui ho lavorato e il modo in cui affronto i problemi.
+      </p>
+    </div>
+
+    <aside class="status-panel" aria-label="Stato in tempo reale">
+      <div class="status-row">
+        <span class="status-key">$ whoami</span>
+        <span class="status-val">Stoicescu Marian Eric</span>
+      </div>
+      <div class="status-row">
+        <span class="status-key">$ age --live</span>
+        <span class="status-val" id="age-value">—</span>
+      </div>
+      <div class="status-row">
+        <span class="status-key">$ uptime --tesisquare</span>
+        <span class="status-val" id="tenure-value">—</span>
+      </div>
+      <div class="status-row">
+        <span class="status-key">$ status</span>
+        <span class="status-val status-online">● disponibile</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about wrap">
+    <h2>Chi sono</h2>
+    <p>
+      Sono un programmatore. Lavoro in Tesisquare da quasi 3 anni, dove mi occupo di
+      <!-- TODO: descrivi qui il tuo ruolo/stack tecnico in modo specifico -->
+      sviluppo software, con particolare attenzione alla qualità del codice e alla
+      manutenibilità nel lungo periodo.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects wrap">
+    <h2>Progetti</h2>
+    <div class="project-grid">
+
+      <article class="project-card">
+        <header class="project-head">
+          <h3>Nome progetto</h3>
+          <span class="project-date">2025</span>
+        </header>
+        <p class="project-desc">
+          Breve descrizione di cosa fa il progetto e del problema che risolve.
+        </p>
+        <ul class="tech-diff">
+          <li class="tech-add">+ React</li>
+          <li class="tech-add">+ Node.js</li>
+          <li class="tech-rem">− legacy jQuery</li>
+        </ul>
+        <div class="project-links">
+          <a href="#">Repository ↗</a>
+          <a href="#">Demo ↗</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <header class="project-head">
+          <h3>Nome progetto</h3>
+          <span class="project-date">2024</span>
+        </header>
+        <p class="project-desc">
+          Breve descrizione di cosa fa il progetto e del problema che risolve.
+        </p>
+        <ul class="tech-diff">
+          <li class="tech-add">+ Python</li>
+          <li class="tech-add">+ PostgreSQL</li>
+        </ul>
+        <div class="project-links">
+          <a href="#">Repository ↗</a>
+        </div>
+      </article>
+
+      <article class="project-card project-card--empty">
+        <p>Aggiungi qui il tuo prossimo progetto.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact wrap">
+    <h2>Contatti</h2>
+    <p>Scrivimi o trovami qui:</p>
+    <ul class="contact-list">
+      <li><a href="mailto:tuo@email.com">tuo@email.com</a></li>
+      <li><a href="https://github.com/tuo-username" target="_blank" rel="noopener">GitHub ↗</a></li>
+      <li><a href="https://linkedin.com/in/tuo-profilo" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer wrap">
+  <p>&copy; <span id="year"></span> Stoicescu Marian Eric</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
