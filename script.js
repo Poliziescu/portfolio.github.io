@@ -51,14 +51,27 @@ function setupThemeToggle() {
   const toggle = document.getElementById("theme-toggle");
   if (!toggle) return;
 
+  const icon = toggle.querySelector("span");
+
   const getTheme = () => document.documentElement.getAttribute("data-theme") || "light";
+
+  const updateIcon = (theme) => {
+    if (icon) icon.textContent = theme === "dark" ? "☀" : "☾";
+    toggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Passa al tema chiaro" : "Passa al tema scuro"
+    );
+  };
 
   const applyTheme = (theme) => {
     document.documentElement.setAttribute("data-theme", theme);
+    updateIcon(theme);
     try {
       localStorage.setItem("theme", theme);
     } catch (e) {}
   };
+
+  updateIcon(getTheme());
 
   toggle.addEventListener("click", () => {
     const next = getTheme() === "dark" ? "light" : "dark";
