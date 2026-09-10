@@ -46,7 +46,28 @@ function renderYear() {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 }
 
+// ---------- Tema chiaro/scuro ----------
+function setupThemeToggle() {
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+
+  const getTheme = () => document.documentElement.getAttribute("data-theme") || "light";
+
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+  };
+
+  toggle.addEventListener("click", () => {
+    const next = getTheme() === "dark" ? "light" : "dark";
+    applyTheme(next);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderLiveStats();
   renderYear();
+  setupThemeToggle();
 });

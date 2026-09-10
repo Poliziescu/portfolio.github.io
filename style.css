@@ -1,11 +1,15 @@
 /* ---------- Tokens ---------- */
-:root{
+:root,
+[data-theme="light"]{
   --bg: #F7F5F0;
   --ink: #1C1C1A;
   --muted: #6B6B62;
   --accent: #3454D1;
   --accent-tint: #E8ECFB;
   --card: #EFE9D8;
+  --panel-bg: #1C1C1A;
+  --panel-ink: #EDEBE3;
+  --panel-key: #8B8A82;
   --add: #3E7C59;
   --rem: #B3453A;
   --line: #DAD5C6;
@@ -13,6 +17,25 @@
   --serif: "Source Serif 4", Georgia, serif;
   --sans: "Inter", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+[data-theme="dark"]{
+  --bg: #17181C;
+  --ink: #EDEBE3;
+  --muted: #9B9A92;
+  --accent: #7C93F0;
+  --accent-tint: #232A45;
+  --card: #21222A;
+  --panel-bg: #0E0F12;
+  --panel-ink: #EDEBE3;
+  --panel-key: #6E6D66;
+  --add: #6BC28A;
+  --rem: #E0776A;
+  --line: #2F3038;
+}
+
+body{
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 *{ box-sizing: border-box; }
@@ -57,11 +80,24 @@ a:focus-visible, button:focus-visible{
 .site-header{
   position: sticky;
   top: 0;
-  background: rgba(247,245,240,0.9);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
   z-index: 10;
 }
+
+.theme-toggle{
+  margin-left: 24px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.theme-toggle:hover{ border-color: var(--accent); }
 
 .header-inner{
   display: flex;
@@ -120,8 +156,8 @@ nav a{
 .status-panel{
   font-family: var(--mono);
   font-size: 0.85rem;
-  background: var(--ink);
-  color: #EDEBE3;
+  background: var(--panel-bg);
+  color: var(--panel-ink);
   border-radius: 6px;
   padding: 22px 22px;
   margin-top: 8px;
@@ -136,9 +172,9 @@ nav a{
 }
 .status-row:last-child{ border-bottom: none; }
 
-.status-key{ color: #8B8A82; }
+.status-key{ color: var(--panel-key); }
 .status-val{ text-align: right; }
-.status-online{ color: #7FD99A; }
+.status-online{ color: var(--add); }
 
 /* ---------- About ---------- */
 .about{

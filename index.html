@@ -9,6 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+  // Applica il tema salvato prima che la pagina venga disegnata, per evitare un flash del tema sbagliato.
+  (function() {
+    try {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
@@ -19,6 +29,9 @@
       <a href="#about">Chi sono</a>
       <a href="#projects">Progetti</a>
       <a href="#contact">Contatti</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambia tema chiaro/scuro">
+        <span aria-hidden="true">◐</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -121,9 +134,9 @@
     <h2>Contatti</h2>
     <p>Scrivimi o trovami qui:</p>
     <ul class="contact-list">
-      <li><a href="mailto:tuo@email.com">tuo@email.com</a></li>
-      <li><a href="https://github.com/tuo-username" target="_blank" rel="noopener">GitHub ↗</a></li>
-      <li><a href="https://linkedin.com/in/tuo-profilo" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><a href="mailto:stoicescueric05@gmail.com">stoicescueric05@gmail.com</a></li>
+      <li><a href="https://github.com/Poliziescu/" target="_blank" rel="noopener">GitHub ↗</a></li>
+      <li><a href="https://www.linkedin.com/in/marian-eric-stoicescu-81b755198" target="_blank" rel="noopener">LinkedIn ↗</a></li>
     </ul>
   </section>
 
