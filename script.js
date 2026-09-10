@@ -2,9 +2,9 @@
 // Data di nascita: aggiornala solo se cambia (non dovrebbe mai succedere :)
 const BIRTH_DATE = new Date(2004, 8, 5); // mese 0-indicizzato: 8 = settembre
 
-// Data di inizio in Tesisquare: MODIFICA questa data con quella esatta di assunzione.
-// Ho impostato una stima ("quasi 3 anni" da oggi) finché non la correggi.
-const TESISQUARE_START_DATE = new Date(2023, 9, 1); // 1 ottobre 2023 (stima)
+// Data di inizio in Tesisquare: uso l'inizio dello stage (continuità lavorativa reale).
+// Se preferisci calcolare l'anzianità solo dall'apprendistato, cambia questa data in new Date(2023, 11, 18).
+const TESISQUARE_START_DATE = new Date(2023, 8, 18); // 18 settembre 2023 (inizio stage)
 
 // ---------- Utility ----------
 function durationSince(fromDate, toDate = new Date()) {
