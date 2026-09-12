@@ -134,6 +134,17 @@ nav a{
   font-size: 0.85rem;
   color: var(--muted);
   margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before{
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--add);
+  flex-shrink: 0;
 }
 
 .hero-text h1{
@@ -158,10 +169,26 @@ nav a{
   font-size: 0.85rem;
   background: var(--panel-bg);
   color: var(--panel-ink);
-  border-radius: 6px;
-  padding: 22px 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 22px 18px;
   margin-top: 8px;
 }
+
+.status-bar{
+  display: flex;
+  gap: 7px;
+  padding: 16px 0 14px;
+}
+.dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-red{ background: #E0776A; }
+.dot-yellow{ background: #E0B85E; }
+.dot-green{ background: #6BC28A; }
 
 .status-row{
   display: flex;
@@ -219,6 +246,7 @@ nav a{
 .project-card{
   background: var(--card);
   border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
   border-radius: 4px;
   padding: 20px;
 }
@@ -230,6 +258,7 @@ nav a{
   color: var(--muted);
   background: transparent;
   border-style: dashed;
+  border-top: 1px dashed var(--line);
   text-align: center;
 }
 
@@ -271,6 +300,174 @@ nav a{
 .tech-rem{ color: var(--rem); }
 
 .project-links a{ margin-right: 16px; font-size: 0.9rem; }
+
+/* ---------- Clienti ---------- */
+.clients-block{
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px dashed var(--line);
+}
+
+.clients-block h3{
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.clients-desc{
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0 0 22px;
+}
+
+.client-grid{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.client-card{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px 14px;
+  background: var(--card);
+}
+
+.client-badge{
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-tint);
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.client-name{
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.client-tag{
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--add);
+  width: 100%;
+  margin-left: 40px;
+}
+
+/* ---------- Formazione & Lingue ---------- */
+.education{
+  padding: 48px 24px 64px;
+  border-top: 1px solid var(--line);
+}
+
+.block-label{
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.edu-lang-grid{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+.edu-block h3{
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.edu-meta{
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 2px 0;
+}
+
+.lang-list{
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.lang-list li{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.lang-list li:last-child{ border-bottom: none; }
+
+.lang-level{
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+/* ---------- Percorso ---------- */
+.path{
+  padding: 48px 24px 64px;
+  border-top: 1px solid var(--line);
+}
+
+.timeline{
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  border-left: 2px solid var(--line);
+}
+
+.timeline li{
+  position: relative;
+  padding: 0 0 32px 28px;
+}
+.timeline li:last-child{ padding-bottom: 0; }
+
+.timeline li::before{
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+
+.timeline time{
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.timeline h3{
+  font-size: 1.05rem;
+  margin: 0 0 6px;
+}
+
+.timeline p{
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 60ch;
+}
 
 /* ---------- Contact ---------- */
 .contact{
