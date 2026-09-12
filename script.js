@@ -83,4 +83,25 @@ document.addEventListener("DOMContentLoaded", () => {
   renderLiveStats();
   renderYear();
   setupThemeToggle();
+  setupClientFlipCards();
 });
+
+// ---------- Flip card clienti ----------
+function setupClientFlipCards() {
+  const cards = document.querySelectorAll(".client-card");
+
+  const toggleFlip = (card) => {
+    const flipped = card.classList.toggle("is-flipped");
+    card.setAttribute("aria-pressed", flipped ? "true" : "false");
+  };
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => toggleFlip(card));
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleFlip(card);
+      }
+    });
+  });
+}

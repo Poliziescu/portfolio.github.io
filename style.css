@@ -329,14 +329,59 @@ nav a{
 }
 
 .client-card{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  perspective: 1000px;
+  height: 108px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.client-card:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.client-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.client-card.is-flipped .client-card-inner{
+  transform: rotateY(180deg);
+}
+
+.client-card-front,
+.client-card-back{
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
   border: 1px solid var(--line);
   border-radius: 6px;
-  padding: 12px 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.client-card-front{
+  flex-direction: row;
+  align-items: center;
   background: var(--card);
+}
+
+.client-card-back{
+  transform: rotateY(180deg);
+  background: var(--accent-tint);
+}
+
+.client-card-back p{
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink);
+  line-height: 1.35;
 }
 
 .client-badge{
@@ -363,8 +408,6 @@ nav a{
   font-family: var(--mono);
   font-size: 0.72rem;
   color: var(--add);
-  width: 100%;
-  margin-left: 40px;
 }
 
 /* ---------- Formazione & Lingue ---------- */
